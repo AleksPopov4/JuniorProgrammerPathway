@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController1 : MonoBehaviour
 {
     private float speed = 20.0f; // Speed of the player movement
     private float turnSpeed = 45.0f; // Speed of the player turning
@@ -12,15 +12,14 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera");
-        driverCamera = GameObject.Find("Driver Camera");
+        mainCamera = GameObject.Find("Main Camera1");
+        driverCamera = GameObject.Find("Driver Camera1");
         driverCamera.SetActive(false); // Ensure the driver camera is inactive at the start
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             if (mainCamera != null && driverCamera != null)
             {
@@ -28,7 +27,7 @@ public class PlayerController : MonoBehaviour
                 driverCamera.SetActive(false); // Deactivate the driver camera
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             if (mainCamera != null && driverCamera != null)
             {
@@ -37,8 +36,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        horizontalInput = Input.GetAxis("Horizontal"); // Get horizontal input from the player
-        forwardInput = Input.GetAxis("Vertical"); // Get vertical input from the player
+        horizontalInput = Input.GetAxis("Horizontal1"); // Get horizontal input from the player
+        forwardInput = Input.GetAxis("Vertical1"); // Get vertical input from the player
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); // Rotate the player based on horizontal input
