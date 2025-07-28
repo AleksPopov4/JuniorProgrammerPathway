@@ -17,5 +17,9 @@ public class Enemy : MonoBehaviour
     {
         Vector3 lookDirection = (player.transform.position - transform.position).normalized; // Calculate direction to player
         enemyRb.AddForce(lookDirection * speed); // Move towards the player
+        if (transform.position.y < -10) // Check if the enemy falls below a certain height
+        {
+            Destroy(gameObject); // Destroy the enemy object
+        }
     }
 }
