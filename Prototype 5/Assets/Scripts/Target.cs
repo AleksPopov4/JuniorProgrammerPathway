@@ -13,6 +13,7 @@ public class Target : MonoBehaviour
     private float maxTorque = 10f;
     private float xRange = 4f;
     private float ySpawnPos = -2f;
+    private int lostLifeValue = -1; // Value for losing a life
 
     private void Start()
     {
@@ -51,9 +52,9 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        if (!gameObject.CompareTag("Bad"))
+        if (!gameObject.CompareTag("Bad") && gameManager.isGameActive)
         {
-            gameManager.GameOver();
+            gameManager.UpdateLives(lostLifeValue);
         }
     }
 }
