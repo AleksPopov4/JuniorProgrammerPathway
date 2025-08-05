@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 20.0f; // Speed of the player movement
-    private float turnSpeed = 45.0f; // Speed of the player turning
-    private float horizontalInput; // Input for horizontal movement
-    private float forwardInput; // Input for forward movement 
-    private GameObject mainCamera; // Reference to the main camera
-    private GameObject driverCamera; // Reference to the driver camera
+    [SerializeField] private float speed = 20.0f; // Speed of the player movement
+    [SerializeField] private float turnSpeed = 45.0f; // Speed of the player turning
+    [SerializeField] private float horizontalInput; // Input for horizontal movement
+    [SerializeField] private float forwardInput; // Input for forward movement 
+    [SerializeField] private GameObject mainCamera; // Reference to the main camera
+    [SerializeField] private GameObject driverCamera; // Reference to the driver camera
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
